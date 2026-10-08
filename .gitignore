@@ -1,0 +1,21 @@
+# Dependencies and build output
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+
+# Kept on this machine only: older home page and exports (not part of the published site)
+/app/page.tsx
+/components/*.tsx
+/exported-pages/
+/Kantan Nenkin Website.html
+/Kantan Nenkin Website.backup.html
+/hero.jpg
+/leaving.jpg
+
+# Local tooling
+.claude/
+.env*
+.DS_Store
+Thumbs.db

@@ -1,0 +1,78 @@
+/*
+  Partner page theme. One theme for the whole page, following the system
+  setting (auto). Sections never set their own theme.
+  Accent: brand vermillion #DC3D28. Shades below are the same hue, used only
+  where small text needs extra contrast.
+  Shape rule: interactive elements are full pill, panels and images are 16px.
+*/
+.partner {
+  --pk-bg: #fcfcfb;
+  --pk-surface: #f5f5f4;
+  --pk-sunken: #ebe9e6;
+  --pk-ink: #1c1917;
+  --pk-ink-soft: #57534e;
+  --pk-line: #e2dfdb;
+  --pk-accent: #dc3d28;
+  --pk-accent-ink: #b8301d;
+  --pk-accent-tint: #fbe9e6;
+  --pk-btn-bg: #dc3d28;
+  --pk-btn-hover: #c4341f;
+  --pk-btn-ink: #fcfcfb;
+
+  color-scheme: light;
+  background-color: var(--pk-bg);
+  color: var(--pk-ink);
+}
+
+@media (prefers-color-scheme: dark) {
+  .partner {
+    --pk-bg: #141211;
+    --pk-surface: #1d1a18;
+    --pk-sunken: #262220;
+    --pk-ink: #f3f1ee;
+    --pk-ink-soft: #b8b1aa;
+    --pk-line: #38332f;
+    --pk-accent: #ef5a44;
+    --pk-accent-ink: #f07a66;
+    --pk-accent-tint: #3a1d18;
+    --pk-btn-bg: #dc3d28;
+    --pk-btn-hover: #e8513b;
+    --pk-btn-ink: #fcfcfb;
+
+    color-scheme: dark;
+  }
+}
+
+.partner .tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Myanmar script has tall stacked marks: tight display leading clips them. */
+.partner [lang="my"] :is(h1, h2, h3) {
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+.partner [lang="my"] :is(p, li, dd, dt, summary, a) {
+  line-height: 1.8;
+}
+
+/* Negative tracking crowds Chinese characters. */
+.partner [lang^="zh"] :is(h1, h2, h3) {
+  letter-spacing: 0;
+  line-height: 1.3;
+}
+
+/* Myanmar headline runs wider and taller than Latin at the same size. */
+.partner [lang="my"] h1 {
+  font-size: 34px;
+}
+@media (min-width: 768px) {
+  .partner [lang="my"] h1 {
+    font-size: 44px;
+  }
+}
+@media (min-width: 1280px) {
+  .partner [lang="my"] h1 {
+    font-size: 50px;
+  }
+}
