@@ -18,6 +18,15 @@ export const COMPANY = {
   website: "https://nenkinkantan.com/",
 };
 
+// Brand logo, cropped from the master file (tagline dropped: unreadable at nav size).
+// logo-dark.png turns the black ink off-white for dark mode. Rendered 3x for 44px height.
+export const LOGO = {
+  light: BASE + "/partner/logo.png",
+  dark: BASE + "/partner/logo-dark.png",
+  width: 303,
+  height: 120,
+};
+
 // Photos generated in Canva, served from public/partner. Alt text is per language.
 export const IMAGES = {
   hero: { src: BASE + "/partner/hero.jpg", width: 1136, height: 1408 },

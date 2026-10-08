@@ -1,6 +1,6 @@
 import { CtaButton } from "./CtaButton";
 import { LangSwitch } from "./LangSwitch";
-import { COMPANY } from "./content";
+import { COMPANY, LOGO } from "./content";
 import type { Dict, Locale } from "./i18n";
 
 export function Nav({ t, locale }: { t: Dict; locale: Locale }) {
@@ -12,10 +12,21 @@ export function Nav({ t, locale }: { t: Dict; locale: Locale }) {
   return (
     <header className="sticky top-0 z-30 border-b border-pk-line bg-pk-bg">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-4 md:px-8">
-        <a href="#top" className="whitespace-nowrap text-[19px] font-bold tracking-tight text-pk-ink">
-          Nenkin Kantan
-          <span className="ml-2 hidden font-medium text-pk-soft min-[400px]:inline">{t.nav.partners}</span>
-        </a>
+        <div className="flex items-center gap-3">
+          {/* Logo goes to the official site. Dark mode swaps to the off-white pig. */}
+          <a
+            href={COMPANY.website}
+            className="shrink-0 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-pk-accent"
+          >
+            <picture>
+              <source srcSet={LOGO.dark} media="(prefers-color-scheme: dark)" />
+              <img src={LOGO.light} alt="Nenkin Kantan" width={LOGO.width} height={LOGO.height} className="h-11 w-auto" />
+            </picture>
+          </a>
+          <span className="hidden whitespace-nowrap border-l border-pk-line pl-3 text-[17px] font-medium text-pk-soft min-[400px]:inline">
+            {t.nav.partners}
+          </span>
+        </div>
         <nav aria-label="Main" className="hidden items-center gap-6 xl:flex">
           {links.map((l) => (
             <a
